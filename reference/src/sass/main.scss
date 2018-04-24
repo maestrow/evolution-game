@@ -54,13 +54,13 @@
 
 .cards {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
   border: 1px solid black;
   width: 200px;
   margin: 3px;
-
 }
 
 .card-header {
