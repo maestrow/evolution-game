@@ -5,6 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Chrome launch",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Debug Current Script",
@@ -21,6 +29,6 @@
       "args": [
         "clean"
       ]
-    }
+    },
   ]
 }
