@@ -12,7 +12,7 @@ class Cards extends React.Component {
     return {
       cards: nextProps.cards.filter(card => 
         nextProps.sets[card.set] 
-        && card.cat.some(cat => nextProps.categories[cat]))
+        && (!card.cat || card.cat.some(cat => nextProps.categories[cat])))
     }
   }
 

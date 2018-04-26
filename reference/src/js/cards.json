@@ -1,23 +1,4 @@
-
-let sets = [
-  { id: 'base', caption: 'Базовый' },
-  { id: 'fly', caption: 'Время летать' },
-  { id: 'gift', caption: 'Подарочный' },
-  { id: 'cont', caption: 'Континенты' },
-]
-
-let categories = [
-  { id: 'attack', caption: 'Атака' },
-  { id: 'defence', caption: 'Защита' },
-  { id: 'parasite', caption: 'Паразиты' },
-  { id: 'food', caption: 'Питание' },
-  { id: 'n', caption: '+n еды' },
-  { id: 'twin', caption: 'Парные' },
-]
-
-//let cards = require('./cards.json') // |> JSON.parse
-
-let cards = [
+[
   {
     "set": "base",
     "key": "SWIMMING",
@@ -217,9 +198,3 @@ let cards = [
     "description": "Животное может быть съедено, но \"парализует\" атаковавшего в его хищника у которого до начала следующего хода перестают действовать все его свойства."
   }
 ]
-
-module.exports = {
-  sets,
-  categories,
-  cards
-}

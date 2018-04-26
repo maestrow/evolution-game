@@ -1,0 +1,1 @@
+"../node_modules/.bin/babel.cmd" parser.js --out-file parser.out.js && node parser.out.js base.txt fly.txt gift.txt cont.txt > ../src/js/cards.json

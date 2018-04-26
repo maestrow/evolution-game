@@ -1,0 +1,95 @@
+﻿base
+SWIMMING
+ВОДОПЛАВАЮЩЕЕ
+животное может быть атаковано только хищником, имеющим свойство ВОДОПЛАВАЮЩЕЕ. Хищник со свойством ВОДОПЛАВАЮЩЕЕ не может атаковать животное без свойства ВОДОПЛАВАЮЩЕЕ.
+animal can only be attacked by carnivorous possessing SWIMMING trait. A carnivorous with SWIMMING trait can only attack an animal with SWIMMING trait.
+
+base
+RUNNING
+БЫСТРОЕ
+Когда ваше животное с этим свойством атаковано хищником, бросьте кубик. Если выпало 4, 5 или 6 - животное не съеденно. Атаковавший хищник в этот ход не может атаковать другое животное.
+When your animal with this trait is attacked by a carnivorous, roll one dice. If the dice roll is 4, 5 or 6 - animal survives. The attacking a carnivorous can't attack another animal during this turn.
+
+base
+MIMICRY
+МИМИКРИЯ 
+Когда это животное атаковано хищником, владелец животное может перенаправить атаку хищника на другое свое животное, которое этот Хищник способен атаковать.
+When your animal with this trait is attacked by a carnivorous, you can choose another animal to be attacked by the carnivorous instead. If you don't have animal animal, that can be eaten by the attacking carnivorous, this trait can't be used.
+
+base
+SCAVENGER
+ПАДАЛЬЩИК
+Когда съедено другое животное, животное с этим свойством получает синий. синий может получить только одно животное на столе, начиная с животное игрока, которому принадлежит хищник, и далее по часовой стрелке. Это свойство нельзя сыграть на животное со свойством "Хищник" и наоборот.
+When any other animal has been eaten, animal possessing this trait gets blue. blue can be only received by one animal on the table, starting from the animal of the player who ownes the carnivorous, and prosceeding clockwise. This trait can't be played on animal with the carnivorous trait and vice versa.
+
+base
+SYMBIOSYS
+СИМБИОЗ
+Сыграть одновременно на пару животное животное. Одно из животное указывается как "симбионт". Другое животное не может быть атаковано хищником, пока жив "симбионт", Но может получать красный \ синий, только если "симбионт" уже НАКОРМЛЕН.
+Play on a pair of animal animal in a tandem. Choose the first animals as a "symbiont". The second animal can not be attacked as long as the "symbiont" survives, and can receive red \ blue only after the "symbiont" has been FED.
+
+base
+PIRACY
+ПИРАТСТВО
+Использовать это свойство в свою фазу питания. Получить синий, забрав один красный \ синий у другого животное на столе, которое уже получила в этот ход красный \ синий, но ещё не НАКОРМЛЕНО. Животное может использовать это свойство только один раз за ход.
+Use this trait in your feeding phase. Get blue by taking one red \ blue from the any other animal on the table  that has received red \ blue in this turn, but hasn't yet been FED. animal can use this trait only once in a turn.
+
+base
+TAIL LOSS
+ОТБРАСЫВАНИЕ ХВОСТА
+Когда животное атаковано хищником, поместить в сброс карту этого или другого имеющегося у животное свойства. Животное остается в живых. Хищник получает только один синий.
+When animal is attacked by a carnivorous, discard the card of this or any other trait of animal. animal survives. The carnivorous gets only one blue.
+
+base
+COMMUNICATION
+ВЗАИМОДЕЙСТВИЕ
+Сыграть одновременно на пару животное животное. Когда одно животное получает красный из "кормовой базы", другое животное получает красный вне очереди.
+Play on a pair of animal animal. When one animal gets red from the food bank, the other animal gets red out of the queue.
+
+base
+GRAZING
+ТОПОТУН
+Можно использовать в каждую свою фазу питания - уничтожить один красный из "кормовой базы".
+Can be used during each of your feeding phase. Destroy one red from the food bank.
+
+base
+HIGH BODY WEIGHT
+БОЛЬШОЙ
+Данное животное может быть атаковано только "БОЛЬШИМ" хищником.
+This animal can only be attacked by a carnivorous with HIGH BODY WEIGHT.
+
+base
+HIBERNATION ABILITY
+СПЯЧКА
+Использовать в свою фазу питания - животное считается НАКОРМЛЕННЫМ. Это свойство нельзя использовать два года подряд и в последний ход игры.
+Use in your feeding phase. animal is then considered FED. This trait can not be used for two turns in a row and within the last turn of the game.
+
+base
+POISONOUS
+ЯДОВИТОЕ
+Хищник, съевший это животное, в фазу вымирания текущего хода погибает.
+The carnivorous who has eaten this animal dies in a the extinction phase of the current turn.
+
+base
+COOPERATION
+СОТРУДНИЧЕСТВО
+Сыграть одновременно на пару животное животное. Когда одно животное получает красный \ синий второе животное сразу же получает один синий.
+Play on a pair of animal animal. When one animal receives red \ blue, the second animal immediately receives one blue.
+
+base
+BURROWING
+НОРНОЕ
+Когда животное НАКОРМЛЕНО, оно не может быть атаковано хищником.
+animal can't be attacked by a carnivorous when it is FED.
+
+base
+CAMOUFLAGE
+КАМУФЛЯЖ
+Животное может быть атаковано только хищником, имеющим свойство ОСТРОЕ ЗРЕНИЕ.
+animal can only be attacked by a carnivorous possessing SHARP VISION.
+
+base
+SHARP VISION
+ОСТРОЕ ЗРЕНИЕ
+Хищник, имеющий это свойство, может атаковать животное со свойством КАМУФЛЯЖ.
+A carnivorous possessing this trait can attack a animal with CAMOUFLAGE trait.
