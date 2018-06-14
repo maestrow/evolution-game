@@ -28,8 +28,8 @@ class Main extends React.Component {
   render () {
     
     return (
-      <div className="root">
-        <div className="badge-groups">
+      <div className="main">
+        <div className="main__badge-groups">
           <BadgeGroup name="Наборы:" badges={data.sets} onSwitch={this.onBadgeSwitch.bind(this, 'sets')} />
           <BadgeGroup name="Категории:" badges={data.categories} onSwitch={this.onBadgeSwitch.bind(this, 'categories')} />
         </div>

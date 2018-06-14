@@ -14,10 +14,10 @@ class BadgeGroup extends React.Component {
     })))
     return (
       <div className="badge-group">
-        <div className="badge-group-name">
+        <div className="badge-group__name">
           {this.props.name}
         </div>
-        <div className="badge-group-body">
+        <div className="badge-group__body">
           {badges}
         </div>
       </div>

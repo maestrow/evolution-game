@@ -71,7 +71,7 @@ let clean = (dir) => removeFiles(`${dir}/**/*.*`)
 gulp.task('clean', () => clean(dirs.dev))
 
 gulp.task('watch-src', () => {
-  gulp.watch(`${dirs.src}/styles/**/*.scss`, ['sass'])
+  gulp.watch(`${dirs.src}/**/*.scss`, ['sass'])
   gulp.watch(`${dirs.src}/*.pug`, ['pug'])
 })
 
@@ -80,7 +80,7 @@ gulp.task('dev-build', ['clean', 'sass', 'pug']) // webpack task excluded becaus
 gulp.task('run-server', ['watch-src'], () => {
   browserSync.init({
     server: dirs.dev,
-    browser: 'Chrome',
+    //browser: 'Chrome',
     //startPath: '/react.html',
     middleware: [
       webpackDevMiddleware(bundler),

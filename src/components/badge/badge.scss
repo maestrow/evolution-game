@@ -1,14 +1,16 @@
+$component: 'badge';
 
-.badge {
+.#{$component} {
   cursor: pointer;
   padding: 5px;
   margin: 5px;
+
+  &--highlighted {
+    background-color: #ddecae;
+  }
+  
+  &--disabled {
+    text-decoration: line-through;
+  }
 }
 
-.badge-highlighted {
-  background-color: #ddecae;
-}
-
-.badge-disabled {
-  text-decoration: line-through;
-}

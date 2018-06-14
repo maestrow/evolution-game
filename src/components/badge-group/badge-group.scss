@@ -1,22 +1,24 @@
-.badge-group {
+$component: 'badge-group';
+
+.#{$component} {
   display: flex;
   flex-direction: row;
   margin: 3px;
-}
 
-.badge-group-name {
-  padding: 5px;
-  // border: 1px solid black;
-  width: 90px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+  &__name {
+    padding: 5px;
+    // border: 1px solid black;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+  }
 
-.badge-group-body {
-  // border: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  width: 100%
+  &__body {
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%
+  }
 }
 

@@ -26,8 +26,8 @@ class Badge extends React.Component {
   render () {
     let styleClasses = classNames({
       'badge': true,
-      'badge-highlighted': this.state.highlited,
-      'badge-disabled': !this.state.enabled
+      'badge--highlighted': this.state.highlited,
+      'badge--disabled': !this.state.enabled
     })
     return (
       <div 
