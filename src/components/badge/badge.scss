@@ -1,0 +1,14 @@
+
+.badge {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+.badge-highlighted {
+  background-color: #ddecae;
+}
+
+.badge-disabled {
+  text-decoration: line-through;
+}

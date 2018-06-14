@@ -40,7 +40,7 @@ const removeFiles = (pattern) => {
 
 gulp.task('sass', (cb) => {
   pump([
-    gulp.src(`${dirs.src}/sass/main.scss`),
+    gulp.src(`${dirs.src}/styles/main.scss`),
     sourcemaps.init(),
     sass().on('error', sass.logError),
     sourcemaps.write(), // write() to write inline or .write('./maps')
@@ -71,7 +71,7 @@ let clean = (dir) => removeFiles(`${dir}/**/*.*`)
 gulp.task('clean', () => clean(dirs.dev))
 
 gulp.task('watch-src', () => {
-  gulp.watch(`${dirs.src}/sass/**/*.scss`, ['sass'])
+  gulp.watch(`${dirs.src}/styles/**/*.scss`, ['sass'])
   gulp.watch(`${dirs.src}/*.pug`, ['pug'])
 })
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Badge from './badge.jsx'
+import Badge from '../badge/badge.jsx'
 
 class BadgeGroup extends React.Component {
 

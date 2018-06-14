@@ -1,8 +1,8 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
-import Cards from './cards.jsx'
-import BadgeGroup from './badge-group.jsx'
-const data = require('./data.js')
+import Cards from '../cards/cards.jsx'
+import BadgeGroup from '../badge-group/badge-group.jsx'
+const data = require('../../data.js') // ToDo pass to ctor
 
 let getNewObjWith = (arr, value) => arr.map(i => i.id).reduce((acc, i) => {
   acc[i] = value

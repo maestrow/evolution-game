@@ -4,7 +4,7 @@ const webpack = require ('webpack')
 module.exports = {
   entry: {
     main: [
-      './src/js/app.js',
+      './src/app.js',
       'webpack/hot/dev-server',
       'webpack-hot-middleware/client',
     ]
