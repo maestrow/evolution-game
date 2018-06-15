@@ -1,7 +1,9 @@
+@import '../../styles/main.scss';
+
 $component: 'card';
 
 .#{$component} {
-  border: 1px solid black;
+  border: 1px solid blue;
   width: 200px;
   margin: 3px;
   

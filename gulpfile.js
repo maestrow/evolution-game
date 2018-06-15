@@ -40,7 +40,7 @@ const removeFiles = (pattern) => {
 
 gulp.task('sass', (cb) => {
   pump([
-    gulp.src(`${dirs.src}/styles/main.scss`),
+    gulp.src(`${dirs.src}/styles/all.scss`),
     sourcemaps.init(),
     sass().on('error', sass.logError),
     sourcemaps.write(), // write() to write inline or .write('./maps')

@@ -1,0 +1,4 @@
+Hi
+
+    <Badge caption="caption" />
+
