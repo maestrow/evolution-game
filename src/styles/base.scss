@@ -9,3 +9,8 @@
 body {
   font-family: 'Neucha', cursive;
 }
+
+@mixin button-reset {
+  outline: none;
+  border: none;
+}

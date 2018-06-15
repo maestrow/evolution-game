@@ -1,15 +1,21 @@
 $component: 'badge';
 
+$border-width: 3px;
+
 .#{$component} {
+  @include button-reset;
   cursor: pointer;
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  margin: 1px;
+  border-bottom: $border-width solid transparent;
+  background-color: #ddecae;
 
   &--highlighted {
-    background-color: #ddecae;
+    border-bottom: $border-width solid #557dd3;
   }
   
   &--disabled {
+    background-color: transparent;
     text-decoration: line-through;
   }
 }
