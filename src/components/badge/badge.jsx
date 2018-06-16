@@ -31,6 +31,7 @@ class Badge extends React.Component {
     })
     return (
       <button 
+        type="button"
         className={styleClasses} 
         onClick={this.onClick.bind(this)} 
         onMouseEnter={this.onMouseEnter.bind(this)}

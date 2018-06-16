@@ -25,6 +25,7 @@ const bundler = webpack(webpackConfig)
 const dirs = {
   src:  './src',   // Sources directory
   dev:  './build', // Development build
+  static: './static',
 }
 
 // === Helpers
@@ -80,6 +81,7 @@ gulp.task('dev-build', ['clean', 'sass', 'pug']) // webpack task excluded becaus
 gulp.task('run-server', ['watch-src'], () => {
   browserSync.init({
     server: dirs.dev,
+    serveStatic: [`${dirs.static}`],
     //browser: 'Chrome',
     //startPath: '/react.html',
     middleware: [

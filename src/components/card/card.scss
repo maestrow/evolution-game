@@ -3,16 +3,23 @@
 $component: 'card';
 
 .#{$component} {
-  border: 1px solid blue;
-  width: 200px;
+  border: 1px solid black;
+  width: 210px;
   margin: 3px;
-  
+
   &__header {
     border-bottom: 1px solid black;
     padding: 3px;
     text-align: center;
   }
   
+  &__image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    display: block;
+  }
+
   &__body {
     // border: 1px solid black;
     padding: 3px;

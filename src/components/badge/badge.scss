@@ -8,12 +8,12 @@ $border-width: 3px;
   @include button-reset;
   cursor: pointer;
   padding: 10px;
-  margin: 1px;
+  border-top: $border-width solid transparent;
   border-bottom: $border-width solid transparent;
-  background-color: #ddecae;
+  background-color: #edf1de;
 
   &--highlighted {
-    border-bottom: $border-width solid #557dd3;
+    border-bottom: $border-width solid #5b6321;
   }
   
   &--disabled {
