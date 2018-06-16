@@ -4,10 +4,10 @@ const path = require ('path')
 
 // === Common Helpers
 
-const resolve = (p) => path.resolve(__dirname, p)
-const last = (arr) => arr[arr.length-1]
-const stripBom = (i) => i.charCodeAt(0) === 0xFEFF ? i.slice(1) : i
-const isEmpty = (obj) => Object.keys(obj).length === 0
+const resolve = p => path.resolve(__dirname, p)
+const last = arr => arr[arr.length-1]
+const stripBom = i => i.charCodeAt(0) === 0xFEFF ? i.slice(1) : i
+const isEmpty = obj => Object.keys(obj).length === 0
 
 
 // === Main code flow
