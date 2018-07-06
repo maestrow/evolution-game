@@ -1,0 +1,28 @@
+@import '../../styles/main.scss';
+
+$component: 'two-state-button';
+
+:root {
+  --two-state-button__borderWidth: 3px;
+}
+
+.#{$component} {
+  @include button-reset;
+  cursor: pointer;
+  border-top: var(--two-state-button__borderWidth) solid transparent;
+  border-bottom: var(--two-state-button__borderWidth) solid transparent;
+  background-color: #edf1de;
+
+  &--highlighted {
+    border-bottom: var(--two-state-button__borderWidth) solid #5b6321;
+  }
+  
+  &--on {
+    background-color: #edf1de;
+  }
+
+  &--off {
+    background-color: transparent;
+  }
+
+}

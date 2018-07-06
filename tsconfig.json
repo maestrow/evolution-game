@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+      "target": "es2017",
+      "module": "commonjs",
+      "jsx": "react",
+      "lib": ["es6", "ES2015", "dom", "dom.iterable", "scripthost"],
+      "alwaysStrict": true,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noEmitHelpers": true,
+      "importHelpers": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "outDir": "build",
+      "baseUrl": "./src",
+      "strict": true,
+      "moduleResolution": "node",
+      "charset": "utf8"
+  },
+  "include": ["types/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "node_modules/@types/**/*.d.ts"],
+  "typeAcquisition": {
+      "enable": true
+  }
+}

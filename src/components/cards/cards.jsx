@@ -5,7 +5,7 @@ class Cards extends React.Component {
   
   constructor (props) {
     super (props)
-    this.state = this.constructor.getDerivedStateFromProps(props, {})
+    this.state = this.constructor.getDerivedStateFromProps(props, {}) // ToDo do we need it?
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {

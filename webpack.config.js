@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require ('webpack')
+const base = require ('./config/webpack.base.js')
 
-module.exports = {
+module.exports = Object.assign({
   entry: {
     main: [
       './src/app.js',
@@ -14,17 +15,8 @@ module.exports = {
     filename: '[name].js'
   },
   devtool: "inline-source-map",
-  module: {
-    rules: [
-      {
-        test: /\.js|\.jsx$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
-  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
-}
+}, base);

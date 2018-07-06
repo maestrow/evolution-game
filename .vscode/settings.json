@@ -3,5 +3,15 @@
   "eslint.enable": true,
   "files.exclude": {
     "node_modules": true
+  },
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.tabSize": 2
   }
 }
