@@ -1,28 +1,28 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { getCssBlockName } from 'utils/getCssBlockName'
+import BaseComponent from 'utils/base-component'
 
-export interface ITwoStateButtonProps {
+export interface ITwoStateButtonItem {
   caption: string;
   checked: boolean;
-  onClick: () => void;
+}
+
+export interface ITwoStateButtonProps extends React.ButtonHTMLAttributes<any>, ITwoStateButtonItem {
+  cssRoot?: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface IState {
   highlighted: boolean;
 }
 
-export class TwoStateButton extends React.Component<ITwoStateButtonProps, IState> {
+export class TwoStateButton extends BaseComponent<ITwoStateButtonProps, IState> {
 
   constructor(props: ITwoStateButtonProps) {
     super(props);
     this.state = {
       highlighted: false,
     };
-  }
-
-  protected get blockName() {
-    return getCssBlockName(this.constructor.name);
   }
 
   private handleMouseEnter = () => {
@@ -35,21 +35,26 @@ export class TwoStateButton extends React.Component<ITwoStateButtonProps, IState
 
   public render() {
 
-    const styleClasses = classNames(this.blockName, {
-      [`${this.blockName}--highlighted`]: this.state.highlighted,
-      [`${this.blockName}--on`]: this.props.checked,
-      [`${this.blockName}--off`]: !this.props.checked,
+    const { onClick, caption, cssRoot, ...rest } = this.props;
+
+    const blockName = cssRoot || this.cssRoot;
+
+    const styleClasses = classNames(blockName, {
+      [`${blockName}--highlighted`]: this.state.highlighted,
+      [`${blockName}--on`]: this.props.checked,
+      [`${blockName}--off`]: !this.props.checked,
     });
 
     return (
       <button
+        {...rest}
         type="button"
         className={styleClasses}
-        onClick={this.props.onClick}
+        onClick={onClick}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        {this.props.caption}
+        {caption}
       </button>
     )
   }

@@ -7,10 +7,10 @@ class Sample extends React.Component {
     this.state = {
       checked: false
     }
-    this.onClick = this.onClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   };
 
-  onClick () { 
+  handleClick () { 
     this.setState({checked: !this.state.checked}); 
   };
 
@@ -19,7 +19,7 @@ class Sample extends React.Component {
       <TwoStateButton
         caption="push me"
         checked={this.state.checked}
-        onClick={this.onClick}
+        onClick={this.handleClick}
       />
     );
   };

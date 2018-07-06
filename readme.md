@@ -1,6 +1,7 @@
 ## Компиляция и запуск
 
-`.\gulp.cmd --tasks` и см. `guilpfile.js`
+- `.\gulp.cmd --tasks` и см. `guilpfile.js`
+- `npm run sg`
 
 ## Утилиты
 

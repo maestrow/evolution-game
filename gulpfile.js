@@ -9,6 +9,7 @@ const gulp        = require ('gulp')
 const sourcemaps  = require ('gulp-sourcemaps')
 const sass        = require ('gulp-sass')
 const pug         = require ('gulp-pug')
+const concat      = require ('gulp-concat')
 //webpack
 const webpack              = require ('webpack')
 const webpackConfig        = require ('./webpack.config.js')
@@ -41,10 +42,15 @@ const removeFiles = (pattern) => {
 
 gulp.task('sass', (cb) => {
   pump([
-    gulp.src(`${dirs.src}/styles/all.scss`),
+    gulp.src([
+      `${dirs.src}/styles/common.scss`,
+      `${dirs.src}/components/**/*.scss`
+    ]),
     sourcemaps.init(),
     sass().on('error', sass.logError),
     sourcemaps.write(), // write() to write inline or .write('./maps')
+    concat('styles.css'),
+    // ToDo: https://www.npmjs.com/package/gulp-css-purge
     gulp.dest(`${dirs.dev}/css`),
     browserSync.stream(),
   ], cb)

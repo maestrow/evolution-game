@@ -9,7 +9,10 @@ function readJson(path) {
 
 module.exports = {
   resolve: {
-    modules: ['node_modules', resolve('src')],
+    modules: [
+      'node_modules', 
+      resolve('src')
+    ],
     extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
   },
   module: {

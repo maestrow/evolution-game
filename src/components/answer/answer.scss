@@ -1,0 +1,8 @@
+@import '../../styles/common.scss';
+
+$component: 'answer';
+
+.#{$component} {
+  &__element {}
+}
+

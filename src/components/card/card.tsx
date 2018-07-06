@@ -1,10 +1,16 @@
-import React from 'react'
+import * as React from 'react'
 
-const getImagePath = (key) => {
+const getImagePath = (key: string) => {
   return 'card-images/' + key.toLowerCase().replace(/ /g, '_') + '.svg'
 }
 
-const Card = (props) => {
+export interface ICardProps {
+  id: string;
+  caption: string;
+  description: string;
+}
+
+export const Card = (props: ICardProps) => {
   return (
     <div className="card">
       <div className="card__header">{props.caption}</div>
@@ -14,4 +20,4 @@ const Card = (props) => {
   );
 }
 
-export default Card
+export default Card;
