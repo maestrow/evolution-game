@@ -1,30 +1,21 @@
-const path = require ('path')
-const fs = require ('fs')
+var _ref, _process$argv$slice;
 
-const splitByCapitals = (str) => {
+const path = require('path');
+
+const fs = require('fs');
+
+const splitByCapitals = str => {
   return str.replace(/(?<=[A-Z])(?=[A-Z][a-z])|(?<=[^A-Z])(?=[A-Z])|(?<=[A-Za-z])(?=[^A-Za-z])/g, ' ').split(' ');
-} 
+};
 
-const getCssName = componentName => splitByCapitals(componentName).map(i => i.toLowerCase()).join('-');
+const getCssName = componentName => splitByCapitals(componentName).map(i => i.toLowerCase()).join('-'); // #region Templates
 
-// #region Templates
 
 const tsx = (name, cssName, withCssRoot) => {
-  
-  const iface = withCssRoot
-    ? `  cssRoot?: string;\n`
-    : '';
-
-  const cssClassesLine = withCssRoot
-    ? `const cssClasses = this.getCssClasses(['item1', 'item2'], this.props.cssRoot);\n    `
-    : '';
-  
-  const root = withCssRoot
-    ? 'cssClasses.root'
-    : 'this.cssRoot';
-
-  return (
-`import * as React from 'react';
+  const iface = withCssRoot ? `  cssRoot?: string;\n` : '';
+  const cssClassesLine = withCssRoot ? `const cssClasses = this.getCssClasses(['item1', 'item2'], this.props.cssRoot);\n    ` : '';
+  const root = withCssRoot ? 'cssClasses.root' : 'this.cssRoot';
+  return `import * as React from 'react';
 import * as cn from 'classnames';
 import BaseComponent from 'utils/base-component';
 
@@ -49,11 +40,10 @@ export class ${name} extends BaseComponent<I${name}Props, never> {
     );
   }
 }
-`);
-}
+`;
+};
 
-const tsx_cssClasses = (name, cssName) => 
-`import * as React from 'react';
+const tsx_cssClasses = (name, cssName) => `import * as React from 'react';
 import * as cn from 'classnames';
 import BaseComponent from 'utils/base-component';
 
@@ -91,16 +81,14 @@ export class ${name} extends BaseComponent<I${name}Props, never> {
     );
   }
 }
-`
+`;
 
-const mdTpl = (name) => 
-`${name} sample:
+const mdTpl = name => `${name} sample:
 
     <${name} />
-`
+`;
 
-const scssTpl = (cssName) => 
-`@import '../../styles/common.scss';
+const scssTpl = cssName => `@import '../../styles/common.scss';
 
 $component: '${cssName}';
 
@@ -108,39 +96,30 @@ $component: '${cssName}';
   &__element {}
 }
 
-`
+`; // #endregion
 
-// #endregion
 
-const getArgs = (argsArr) => {
-  console.log('Arguments:')
-  console.log(argsArr)
+const getArgs = argsArr => {
+  console.log('Arguments:');
+  console.log(argsArr);
   return {
     name: argsArr[0],
     cssClasses: String(argsArr[1]).toLowerCase() === 'cssclasses',
     cssRoot: String(argsArr[1]).toLowerCase() === 'cssroot',
     root: argsArr[2] ? `../src/${argsArr[2]}` : '../src/components'
   };
-}
+};
 
-const createCmp = (args) => {
-  const cssName = getCssName (args.name);
+const createCmp = args => {
+  const cssName = getCssName(args.name);
   const cmpPath = path.resolve(__dirname, args.root, cssName);
   console.log(`cmpPath: ${cmpPath}`);
   fs.mkdir(cmpPath);
-  const tsxContent = args.cssClasses 
-    ? tsx_cssClasses(args.name, cssName) 
-    : tsx(args.name, cssName, args.cssRoot);
-  [
-    [`${cssName}.tsx` , tsxContent],
-    [`${cssName}.scss`, scssTpl(cssName)],
-    [`${cssName}.md`  , mdTpl(args.name)]
-  ].forEach(i => {
+  const tsxContent = args.cssClasses ? tsx_cssClasses(args.name, cssName) : tsx(args.name, cssName, args.cssRoot);
+  [[`${cssName}.tsx`, tsxContent], [`${cssName}.scss`, scssTpl(cssName)], [`${cssName}.md`, mdTpl(args.name)]].forEach(i => {
     const fileName = path.resolve(cmpPath, i[0]);
     fs.writeFileSync(fileName, i[1], 'utf-8');
-  })
-}
+  });
+};
 
-process.argv.slice(2)
-|> getArgs
-|> createCmp
+_ref = (_process$argv$slice = process.argv.slice(2), getArgs(_process$argv$slice)), createCmp(_ref);

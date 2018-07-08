@@ -1,0 +1,3 @@
+CardPage sample:
+
+    <CardPage />

@@ -1,0 +1,8 @@
+@import '../../styles/common.scss';
+
+$component: 'card-page';
+
+.#{$component} {
+  &__element {}
+}
+

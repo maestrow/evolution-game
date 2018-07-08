@@ -1,0 +1,11 @@
+{
+  "presets": [
+    [
+      "@babel/preset-stage-1", 
+      {
+        "decoratorsLegacy": true,
+        "pipelineProposal": "minimal"
+      }
+    ]
+  ]
+}

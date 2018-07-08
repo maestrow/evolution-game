@@ -1,14 +1,17 @@
 ## Компиляция и запуск
 
-- `.\gulp.cmd --tasks` и см. `guilpfile.js`
+- `.\gulp.cmd serve`. См. `.\gulp.cmd --tasks` и `guilpfile.js`
 - `npm run sg`
 
 ## Утилиты
 
-In tools:
+- `cd tools`
+- `./babel.cmd cmpGen.js -o cmpGen.o.js` - компиляция
+
+`.babelrc` сконфигурирован с `preset-stage-1`, т.о. в утилитах доступен оператор |>.
 
 - `node css.js index` - [css classes extractor](https://github.com/maestrow/css-classes-extractor)
-- `node cmpGen MyAwesomeComponent` - пример запуска генератора компонентов
+- `node cmpGen.o.js MyAwesomeComponent - layouts` - пример запуска генератора компонентов
 
 ### styleguidist
 
@@ -21,3 +24,6 @@ Styleguidist по умолчанию загружает компоненты п�
 ## ToDo
 
 - Вместо .bind использовать arrow functions
+- Перенести компиляцию tools в gulp, добавить tools/**.*/*.o.js в .gitignore.
+- gulp publish в gh-pages.
+- switch to [gulp 4.0](https://codeburst.io/switching-to-gulp-4-0-271ae63530c0)

@@ -14,6 +14,7 @@ const req = (name) => `require ('./${name}.scss');\n\n`;
 console.log(path.resolve(__dirname, 'src/styles/common.scss'));
 
 module.exports = {
+  components: 'src/{components,layouts}/**/*.{js,jsx,ts,tsx}',
   updateExample(props, filepath) {
     const parts = path.parse(filepath);
     const cssPath = path.join(parts.dir, `${parts.name}.scss`);
