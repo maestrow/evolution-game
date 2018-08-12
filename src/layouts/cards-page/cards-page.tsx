@@ -1,36 +1,84 @@
 import * as React from 'react';
-import * as cn from 'classnames';
+import { hot } from 'react-hot-loader';
 import BaseComponent from 'utils/base-component';
+import { ITwoStateButtonItem } from 'components/two-state-button/two-state-button';
 import { ICardProps } from 'components/card/card';
-import { Cards } from 'components/cards/cards';
-const data = require('src/data.js') as ICardProps[];
+import { CardsPageView } from './cards-page.view';
 
-export interface ICardsPageProps {
-  className?: string;
+import * as data from '../../data';
+
+const mapBadges = (badges: data.IBadge[]) => badges.map(i => ({ caption: i.caption, checked: true }))
+
+const getSelectedBadges = (buttons: ITwoStateButtonItem[], badges: data.IBadge[]) => {
+  const result: data.IBadge[] = [];
+  buttons.forEach((i, index) => {
+    if (i.checked) {
+      result.push(badges[index]);
+    }
+  });
+  return result;
 }
 
-export class CardsPage extends BaseComponent<ICardsPageProps, never> {
+export interface ICardsPageProps {
+  onNavigateToCard: (id: string) => void;
+}
+
+interface IBadges {
+  sets: ITwoStateButtonItem[];
+  categories: ITwoStateButtonItem[];
+}
+
+interface IState extends IBadges {
+  selectedCards: ICardProps[];
+}
+
+export class CardsPage extends BaseComponent<ICardsPageProps, IState> {
 
   constructor(props: ICardsPageProps) {
     super(props);
+    this.state = CardsPage.getDerivedStateFromProps();
   }
 
-  private handleClick = (id: string) => {
-    // ToDo: navigate to id;
+  public static getDerivedStateFromProps(): IState {
+    return {
+      sets: mapBadges(data.sets),
+      categories: mapBadges(data.categories),
+      selectedCards: data.cards,
+    }
+  }
+
+  private filterCards = (): ICardProps[] => {
+    const selectedSets = getSelectedBadges(this.state.sets, data.sets);
+    const selectedCats = getSelectedBadges(this.state.categories, data.categories);
+    return data.cards
+      .filter(card => selectedSets.some(set => card.set === set.id))
+      .filter(card => selectedCats.some(cat => card.categories.some(cardCat => cardCat === cat.id)))
+      ;
+  }
+
+  private switchBadge = (name: keyof IBadges, index: number) => {
+    const badges = this.state[name];
+    badges[index].checked = !badges[index].checked;
+    const x = {
+      [name]: badges,
+      selectedCards: this.filterCards(),
+    };
+    this.setState(x as Pick<IState, keyof IState>)
   }
 
   public render() {
-    const classNames = cn(this.cssRoot, this.props.className);
+    const p = this.props;
     return (
-      <div
-        className={classNames}
-      >
-        Hello from CardsPage
-        <Cards
-          items={data}
-          onClick={this.handleClick}
-        />
-      </div>
+      <CardsPageView
+        sets={this.state.sets}
+        categories={this.state.categories}
+        cards={this.state.selectedCards}
+        onClickBadge={this.switchBadge}
+        onClickCard={p.onNavigateToCard}
+        onSelectCard={p.onNavigateToCard}
+      />
     );
   }
 }
+
+export default hot(module)(CardsPage);

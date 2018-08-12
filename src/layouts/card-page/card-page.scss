@@ -1,8 +1,29 @@
 @import '../../styles/common.scss';
 
-$component: 'card-page';
+$component: 'card-page-view';
+$height: 94px;
 
 .#{$component} {
-  &__element {}
+  max-width: 900px;
+  margin: 0px auto;
+  
+  &__header-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: $height;
+  }
+
+  &__header {
+    line-height: $height;
+  }
+
+  &__back-link {
+    margin: auto 10px auto -50px;
+    padding: 10px;
+    &:hover {
+      background-color: #edf1de;
+    }
+  }
 }
 

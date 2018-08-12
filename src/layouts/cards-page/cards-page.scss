@@ -1,8 +1,15 @@
 @import '../../styles/common.scss';
 
-$component: 'cards-page';
+$component: 'cards-page-view';
 
 .#{$component} {
-  &__element {}
+  max-width: 900px;
+  margin: 0px auto;
+
+  &__badge-groups {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
 }
 

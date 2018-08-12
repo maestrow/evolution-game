@@ -1,0 +1,11 @@
+@import '../../styles/common.scss';
+
+$component: 'search-cards';
+
+.#{$component} {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  width: 240px;
+}
+

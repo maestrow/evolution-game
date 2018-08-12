@@ -11,7 +11,7 @@ export interface IBadgeGroupProps {
 
 export class BadgeGroup extends BaseComponent<IBadgeGroupProps, never> {
 
-  protected buttonGroupCssClasses = (): IButtonGroupCssClasses => {
+  private buttonGroupCssClasses = (): IButtonGroupCssClasses => {
     return {
       root: `${this.cssRoot}__body`,
       item: 'badge',

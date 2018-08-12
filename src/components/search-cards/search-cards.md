@@ -1,0 +1,3 @@
+SearchCards sample:
+
+    <SearchCards />

@@ -1,43 +1,48 @@
 import * as React from 'react';
-import * as cn from 'classnames';
+import { hot } from 'react-hot-loader';
 import BaseComponent from 'utils/base-component';
-import { CardInfo } from 'components/card-info/card-info';
-import { ICardProps } from 'components/card/card';
-const data = require('src/data.js') as ICardProps[];
-
-const getCardById = (id: string) => {
-  return data.find(i => i.id === id);
-}
+import * as data from '../../data';
+import { CardPageView } from './card-page.view';
 
 export interface ICardPageProps {
-  className?: string;
   cardId: string;
+  onNavigateBack: () => void;
+  onNavigateToCard: (cardId: string) => void;
 }
 
-export class CardPage extends BaseComponent<ICardPageProps, never> {
+interface IState {
+  card?: data.ICard;
+}
+
+const getCardById = (id: string) => {
+  return data.cards.find(i => i.id === id);
+}
+
+class CardPage extends BaseComponent<ICardPageProps, IState> {
 
   constructor(props: ICardPageProps) {
     super(props);
+    this.state = CardPage.getDerivedStateFromProps(props)
+  }
+
+  public static getDerivedStateFromProps(props: ICardPageProps): IState {
+    return {
+      card: getCardById(props.cardId),
+    }
   }
 
   public render() {
-    const classNames = cn(this.cssRoot, this.props.className);
-    const card = getCardById(this.props.cardId);
-    return (
-      <div
-        className={classNames}
-      >
-        Hello from CardPage
-        {card === undefined
-          ? <div>Такого свойства не существует</div>
-          : (
-            <CardInfo
-              card={card}
-              description="eirojoigj oeirjg oier goiej roigj eoirjg oiej org"
-            />
-          )
-        }
-      </div>
+    return this.state.card === undefined ? (
+      <div>Свойство не найдено</div>
+    ) : (
+      <CardPageView
+          card={this.state.card}
+          description={'wepfokwpeofk pwoek fpowk efpow epofk wpoekf pwoek fpowek fpok pok pwoek f'}
+          onNavigateBack={this.props.onNavigateBack}
+          onNavigateToCard={this.props.onNavigateToCard}
+      />
     );
   }
 }
+
+export default hot(module)(CardPage);

@@ -44,7 +44,8 @@ gulp.task('sass', (cb) => {
   pump([
     gulp.src([
       `${dirs.src}/styles/common.scss`,
-      `${dirs.src}/components/**/*.scss`
+      `${dirs.src}/components/**/*.scss`,
+      `${dirs.src}/layouts/**/*.scss`
     ]),
     sourcemaps.init(),
     sass().on('error', sass.logError),
